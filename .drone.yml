@@ -3,8 +3,14 @@ type: docker
 name: default
 
 steps:
-  - name: build
+  - name: build_war
     image: maven:3.6.3-jdk-8-slim
     commands:
       - mvn --batch-mode package --file pom.xml
-      - sha256sum webapp/target/webapp.war
+
+  - name: build_docker_image
+    image: plugins/docker
+    settings:
+      username: hsmtkk
+      password: 2679e4a786be9b32cb97ce4dc04cb45ddcf9083d
+      registry: docker.pkg.github.com
