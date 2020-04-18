@@ -1,0 +1,10 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    image: maven:3.6.3-jdk-8-slim
+    commands:
+      - mvn --batch-mode package --file pom.xml
+      - file webapp/target/webapp.war
