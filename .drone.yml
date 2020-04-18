@@ -11,6 +11,8 @@ steps:
   - name: build_docker_image
     image: plugins/docker
     settings:
+      username: hsmtkk
       auth: 2679e4a786be9b32cb97ce4dc04cb45ddcf9083d
+      repo: docker.pkg.github.com/hsmtkk/hello-world
       registry: docker.pkg.github.com
       auto_tag: true
