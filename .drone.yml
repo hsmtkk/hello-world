@@ -12,7 +12,8 @@ steps:
     image: plugins/docker
     settings:
       username: hsmtkk
-      password: 2679e4a786be9b32cb97ce4dc04cb45ddcf9083d
-      repo: docker.pkg.github.com/hsmtkk/hello-world
+      password:
+        from_secret: GITHUB_TOKEN
+      repo: docker.pkg.github.com/hsmtkk/hello-world/hello-world
       registry: docker.pkg.github.com
       auto_tag: true
